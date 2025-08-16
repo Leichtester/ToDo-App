@@ -1,0 +1,13 @@
+.body {
+    display: flex;
+    justify-content: center;
+}
+
+//61.8% + 38.2%
+
+.todo-list {
+    display: grid;
+    grid-template-columns: 61.8%;
+    grid-auto-flow: row;
+    grid-row-gap: 10px;
+}

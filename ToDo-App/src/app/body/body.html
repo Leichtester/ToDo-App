@@ -2,7 +2,8 @@
     <div class="todo-list">
         <app-task *ngFor="let task of tasks">
         </app-task>
-        <app-task></app-task>
+        <app-task [taskName]=""></app-task>
     </div>
     <button (click)="add()">Add</button>
+    <input [(ngModel)]="name" type="text" name="taskname" id="taskName">
 </div>

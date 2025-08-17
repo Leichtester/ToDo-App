@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Taskmanager } from '../services/taskmanager';
 
 @Component({
   selector: 'app-task',
@@ -8,6 +9,12 @@ import { Component } from '@angular/core';
 })
 export class Task {
 
-  taskName: string = "This is a new task!";
+  @Input() taskName: string = "This is a new task!";
+
+  constructor(private taskmanager: Taskmanager) {}
+
+  remove() {
+    this.taskmanager.removeTask(this.taskName)
+  }
   
 }

@@ -1,9 +1,10 @@
 <div class="body">
     <div class="todo-list">
-        <app-task *ngFor="let task of tasks">
+        <app-task *ngFor="let task of tasks" [taskName]="task">
         </app-task>
-        <app-task [taskName]=""></app-task>
     </div>
-    <button (click)="add()">Add</button>
-    <input [(ngModel)]="name" type="text" name="taskname" id="taskName">
+    <div class="form">
+        <button class="add-bt" (click)="add()">Add</button>
+        <input type="text" name="taskname" id="taskname" [(ngModel)]="name">
+    </div>
 </div>

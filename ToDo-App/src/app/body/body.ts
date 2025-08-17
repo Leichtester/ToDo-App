@@ -22,6 +22,6 @@ export class Body {
   }
 
   add() {
-    this.taskManager.addTask('test');
+    this.taskManager.addTask(this.name);
   }
 }

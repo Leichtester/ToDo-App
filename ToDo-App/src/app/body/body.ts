@@ -1,6 +1,6 @@
 import { Component, effect } from '@angular/core';
 import { Task } from './../task/task';
-import { Taskmanager } from '../services/taskmanager';
+import { Taskmanager, taskObject } from '../services/taskmanager';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class Body {
 
-  tasks: string[] = [];
+  tasks: Map<string, taskObject> = new Map<string, taskObject>
   name: string = '';
 
   constructor(private taskManager: Taskmanager) {
@@ -23,5 +23,9 @@ export class Body {
 
   add() {
     this.taskManager.addTask(this.name);
+  }
+
+  get taskArray() {
+    return Array.from(this.tasks.entries());
   }
 }

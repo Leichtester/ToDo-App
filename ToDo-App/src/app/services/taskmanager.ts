@@ -58,15 +58,20 @@ export class Taskmanager {
       a.download = 'data.json';
       a.click();
 
-      window.URL.revokeObjectURL(url)
+      window.URL.revokeObjectURL(url);
     });
   }
 
   saveData() {
-    localStorage.setItem('todos', JSON.stringify(this.tasks()))
+    localStorage.setItem('todos', JSON.stringify(this.tasks()));
   }
 
   loadData() {
-
+    const save = localStorage.getItem('todos');
+    const json = JSON.parse(save);
+    let dummy: Map<string, taskObject> = new Map<string, taskObject>();
+    json.
+    this.todos.set()
+  }
   }
 }

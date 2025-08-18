@@ -4,6 +4,6 @@
         <button class="add-btn" (click)="add()">Add</button>
     </div>
     <div class="todo-list">
-        <app-task *ngFor="let entry of taskArray" [taskName]="entry[1].name" [uuid]="entry[0]"></app-task>
+        <app-task *ngFor="let entry of taskArray" [taskName]="entry[1].name" [uuid]="entry[0]" [isActive]="entry[1].status"></app-task>
     </div>
 </div>

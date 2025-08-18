@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Taskmanager } from '../services/taskmanager';
 import { FormsModule } from '@angular/forms';
 
@@ -12,8 +12,11 @@ export class Task {
 
   isChecked: boolean = false;
 
-  @Input() taskName: string = "This is a new task!";
-  @Input() uuid: string = '';
+  @Input() taskName!: string;
+  @Input() uuid!: string;
+  @Input() isActive!: boolean;
+
+  @Output() isActiveChanged = new EventEmitter<boolean>();
 
   constructor(private taskmanager: Taskmanager) {}
 
@@ -22,12 +25,6 @@ export class Task {
   }
 
   checkbox() {
-    let dummy = this.taskmanager.tasks();
-    let task = dummy.get(this.uuid);
-    if(task != undefined) {
-      task.status = this.isChecked;
-      this.taskmanager.tasks.set(dummy);
-    }
+    this.taskmanager.toggleStatus(this.uuid);
   }
-  
 }

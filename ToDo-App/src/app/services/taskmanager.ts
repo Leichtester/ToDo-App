@@ -36,6 +36,15 @@ export class Taskmanager {
     this.tasks().clear();
   }
 
+  toggleStatus(taskUUID: string) {
+    const dummy = this.tasks();
+    const task = dummy.get(taskUUID);
+    if(task) {
+      task.status = !task.status;
+      this.tasks.set(dummy);
+    }
+  }
+
   saveToFile() {
     const dummy: Map<string, taskObject> = this.tasks();
     dummy.forEach((value, key) => {
@@ -51,5 +60,13 @@ export class Taskmanager {
 
       window.URL.revokeObjectURL(url)
     });
+  }
+
+  saveData() {
+    localStorage.setItem('todos', JSON.stringify(this.tasks()))
+  }
+
+  loadData() {
+
   }
 }

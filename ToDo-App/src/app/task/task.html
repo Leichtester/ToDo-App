@@ -1,4 +1,9 @@
 <div class="task-body">
     <h3 class="task-name">{{taskName}}</h3>
-    <div class="buttons"><input type="checkbox" [(ngModel)]="isChecked" (click)="checkbox()" class="checkbox"><button (click)="remove()" class="remove">remove</button></div>
+    <div class="buttons">
+        <input type="checkbox" 
+        class="checkbox" [checked]="isActive"
+        (change)="checkbox()">
+        <button (click)="remove()" class="remove">remove</button>
+    </div>
 </div>

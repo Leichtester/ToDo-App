@@ -25,6 +25,8 @@ export class Body {
     this.taskManager.addTask(this.name);
   }
 
+  
+
   get taskArray() {
     return Array.from(this.tasks.entries());
   }

@@ -16,7 +16,7 @@ export class Header {
   }
 
   download() {
-
+    this.taskmanager.saveToFile();
   }
 
   clearAll() {

@@ -10,11 +10,12 @@ import { Taskmanager } from '../services/taskmanager';
 export class Task {
 
   @Input() taskName: string = "This is a new task!";
+  @Input() uuid: string = '';
 
   constructor(private taskmanager: Taskmanager) {}
 
   remove() {
-    this.taskmanager.removeTask(this.taskName)
+    this.taskmanager.removeTask(this.uuid)
   }
   
 }

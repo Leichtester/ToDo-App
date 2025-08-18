@@ -38,11 +38,18 @@ export class Taskmanager {
 
   saveToFile() {
     const dummy: Map<string, taskObject> = this.tasks();
-    dummy.forEach((value, key) => 
-      let JSONObj = {uuid: key, name: value.name, status: value.status};
-      let objString = JSON.stringify(JSONObj);
+    dummy.forEach((value, key) => {
+      const JSONObj = {uuid: key, name: value.name, status: value.status};
+      const objString = JSON.stringify(JSONObj);
       console.log(objString);
+      const blob = new Blob([objString], {type: 'application/json'});
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'data.json';
+      a.click();
+
+      window.URL.revokeObjectURL(url)
     });
-    
   }
 }

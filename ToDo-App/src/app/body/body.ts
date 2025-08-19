@@ -1,4 +1,4 @@
-import { Component, effect } from '@angular/core';
+import { Component, effect, OnInit } from '@angular/core';
 import { Task } from './../task/task';
 import { Taskmanager, taskObject } from '../services/taskmanager';
 import { CommonModule } from '@angular/common';
@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './body.html',
   styleUrl: './body.scss'
 })
-export class Body {
+export class Body implements OnInit {
 
   tasks: Map<string, taskObject> = new Map<string, taskObject>
   name: string = '';
@@ -19,6 +19,10 @@ export class Body {
     effect(() => {
       this.tasks = taskManager.tasks();
     })
+  }
+
+  ngOnInit(): void {
+    this.taskManager.loadData();
   }
 
   add() {

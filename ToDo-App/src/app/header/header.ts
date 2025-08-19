@@ -12,7 +12,7 @@ export class Header {
   constructor(private taskmanager: Taskmanager) {}
 
   upload() {
-
+    this.taskmanager.loadData();
   }
 
   download() {

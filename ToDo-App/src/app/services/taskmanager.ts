@@ -1,3 +1,4 @@
+import { JsonPipe } from '@angular/common';
 import { Injectable } from '@angular/core';
 import { signal } from '@angular/core';
 import * as uuid from 'uuid';
@@ -24,16 +25,19 @@ export class Taskmanager {
     let dummy = this.tasks();
     dummy.set(newUUID, {name: task, status: false});
     this.tasks.set(dummy);
+    this.saveData();
   }
 
   removeTask(taskUUID: string) {
     let dummy = this.tasks();
     dummy.delete(taskUUID);
     this.tasks.set(dummy);
+    this.saveData();
   }
 
   clearAllTasks() {
     this.tasks().clear();
+    this.saveData();
   }
 
   toggleStatus(taskUUID: string) {
@@ -43,6 +47,7 @@ export class Taskmanager {
       task.status = !task.status;
       this.tasks.set(dummy);
     }
+    this.saveData();
   }
 
   saveToFile() {
@@ -63,15 +68,19 @@ export class Taskmanager {
   }
 
   saveData() {
-    localStorage.setItem('todos', JSON.stringify(this.tasks()));
+    const obj = Object.fromEntries(this.tasks());
+    const json = JSON.stringify(obj);
+    localStorage.setItem('todos', json);
+    console.log("Stored: ", json);
   }
 
   loadData() {
-    const save = localStorage.getItem('todos');
-    const json = JSON.parse(save);
-    let dummy: Map<string, taskObject> = new Map<string, taskObject>();
-    json.
-    this.todos.set()
-  }
+    const item = localStorage.getItem('todos');
+    if(item) {
+      const parsed: Record<string, taskObject> = JSON.parse(item);
+      const dummy = new Map(Object.entries(parsed));
+      this.tasks.set(dummy);
+      console.log("Restored map: " + dummy);
+    }else {console.log('No localStorage items found.')}
   }
 }

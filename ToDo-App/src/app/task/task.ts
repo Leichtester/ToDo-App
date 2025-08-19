@@ -1,10 +1,11 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Taskmanager } from '../services/taskmanager';
 import { FormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-task',
-  imports: [FormsModule],
+  imports: [FormsModule, MatIconModule],
   templateUrl: './task.html',
   styleUrl: './task.scss'
 })

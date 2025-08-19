@@ -2,10 +2,11 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Taskmanager } from '../services/taskmanager';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @Component({
   selector: 'app-task',
-  imports: [FormsModule, MatIconModule],
+  imports: [FormsModule, MatIconModule, MatCheckboxModule],
   templateUrl: './task.html',
   styleUrl: './task.scss'
 })

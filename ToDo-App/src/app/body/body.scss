@@ -24,8 +24,15 @@ body {
     width: 61.8%;
 }
 
+.add-btn {
+    margin-bottom: 5px;
+}
+
 .form {
     position: relative;
     margin: 0 0 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     //bottom: 0;
 }

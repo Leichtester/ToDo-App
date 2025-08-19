@@ -1,9 +1,10 @@
 <div class="task-body">
     <h3 class="task-name">{{taskName}}</h3>
     <div class="buttons">
-        <input type="checkbox" 
+        <!-- <input type="checkbox" 
         class="checkbox" [checked]="isActive"
-        (change)="checkbox()">
+        (change)="checkbox()"> -->
+        <mat-checkbox class="checkbox" [checked]="isActive" (change)="checkbox()"></mat-checkbox>
         <button (click)="remove()" class="remove"><mat-icon>close</mat-icon></button>
     </div>
 </div>

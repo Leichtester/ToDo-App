@@ -3,10 +3,12 @@ import { Task } from './../task/task';
 import { Taskmanager, taskObject } from '../services/taskmanager';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-body',
-  imports: [Task, CommonModule, FormsModule],
+  imports: [Task, CommonModule, FormsModule, MatButtonModule, MatInputModule],
   templateUrl: './body.html',
   styleUrl: './body.scss'
 })

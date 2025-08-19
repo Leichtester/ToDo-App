@@ -1,5 +1,10 @@
 .header-container {
-    background-color: orangered;
+    //background-color: var(--mat-sys-primary);
+    //background-color: var(--mat-sys-secondary);
+    //background-color: var(--mat-sys-surface);
+    background-color: var(--primary);
+    //color: var(--mat-sys-tertiary);
+    color: var(--tertiary);
     width: 100%;
     height: auto;
     padding: 10px 0 10px 0;

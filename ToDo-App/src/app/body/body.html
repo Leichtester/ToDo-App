@@ -1,7 +1,13 @@
 <div class="body">
     <div class="form">
-        <input type="text" placeholder="Enter name..." [(ngModel)]="name">
-        <button class="add-btn" (click)="add()">Add</button>
+        <!-- <input type="text" placeholder="Enter name..." [(ngModel)]="name"> -->
+        <mat-form-field class="example-full-width">
+            <mat-label>New task</mat-label>
+            <input matInput [(ngModel)]="name" #message placeholder="Take out the trash...">
+            <!--<mat-hint align="start"><strong>Don't disclose personal info</strong></mat-hint>
+            <mat-hint align="end">{{message.value.length}} / 256</mat-hint>-->
+        </mat-form-field>
+        <button matButton="elevated" class="add-btn" (click)="add()">Add</button>
     </div>
     <div class="todo-list">
         <app-task *ngFor="let entry of taskArray" [taskName]="entry[1].name" [uuid]="entry[0]" [isActive]="entry[1].status"></app-task>

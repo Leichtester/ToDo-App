@@ -34,6 +34,8 @@ export class Body implements OnInit {
 
   add() {
     this.taskManager.addTask(this.name, this.task);
+    this.name = '';
+    this.task = '';
   }
 
   

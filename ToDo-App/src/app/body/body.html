@@ -4,7 +4,7 @@
             <mat-expansion-panel hideToggle>
                 <mat-expansion-panel-header>
                     <mat-panel-title>Add a new task.</mat-panel-title>
-                    <mat-icon class="space-correction" (click)="triggerSpin()" [class.spin-once]="spin" (animationed)="spin = false" refresh>add</mat-icon>
+                    <mat-icon class="space-correction" (click)="triggerSpin()" [class.spin-once]="spin" (animationend)="spin = false">add</mat-icon>
                 </mat-expansion-panel-header>
                 <div class="expanded-elements">
                     <mat-form-field>
@@ -13,7 +13,7 @@
                     </mat-form-field>
                     <mat-form-field>
                         <mat-label>New task</mat-label>
-                        <textarea matInput [(ngModel)]="task" placeholder="This is a new task!"></textarea>
+                        <textarea matInput [(ngModel)]="task" placeholder="Take out the trash."></textarea>
                     </mat-form-field>
                     <button matButton="elevated" class="add-btn" (click)="add()">Add</button>
                 </div>

@@ -38,4 +38,8 @@ export class Header {
   menu() {
 
   }
+  
+  link() {
+    window.open('https://github.com/Leichtester/ToDo-App/tree/main', '_blank');
+  }
 }

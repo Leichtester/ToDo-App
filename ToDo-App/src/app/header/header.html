@@ -4,7 +4,7 @@
     <span class="spacer"></span>
     <button matIconButton [matMenuTriggerFor]="menu"><mat-icon>format_color_fill</mat-icon></button>
     <mat-menu #menu="matMenu">
-        <mat-radio-group aria-label="Select an option">
+        <mat-radio-group [(ngModel)]="selectedOption" aria-label="Select a theme">
             <mat-radio-button value="1" (click)="this.thememanager.changeTheme('azure')">Azure & Blue</mat-radio-button>
             <mat-radio-button value="2" (click)="this.thememanager.changeTheme('rose')">Roses & Red</mat-radio-button>
             <mat-radio-button value="3" (click)="this.thememanager.changeTheme('magenta')">Magenta & Violet</mat-radio-button>

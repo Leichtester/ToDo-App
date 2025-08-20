@@ -21,6 +21,8 @@ export class Header {
   name: string = '';
   task: string = '';
 
+  selectedOption = '1';
+
   constructor(private taskmanager: Taskmanager, public thememanager: Thememanager) {}
 
   upload() {

@@ -3,14 +3,20 @@ import { Taskmanager } from '../services/taskmanager';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-header',
-  imports: [MatToolbarModule, MatIconModule, MatButtonModule],
+  imports: [MatToolbarModule, MatIconModule, MatButtonModule, MatExpansionModule, MatInputModule, FormsModule],
   templateUrl: './header.html',
   styleUrl: './header.scss'
 })
 export class Header {
+
+  name: string = '';
+  task: string = '';
 
   constructor(private taskmanager: Taskmanager) {}
 

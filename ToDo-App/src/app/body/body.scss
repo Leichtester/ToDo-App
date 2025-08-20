@@ -18,14 +18,9 @@ body {
 
 .todo-list {
     display: grid;
-    //grid-template-columns: 61.8%;
     grid-auto-flow: row;
     grid-row-gap: 10px;
     width: 61.8%;
-}
-
-.add-btn {
-    margin-bottom: 5px;
 }
 
 .form {
@@ -35,5 +30,22 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    //bottom: 0;
+}
+
+.expanded-elements {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.spin-once {
+    animation: rotate180 0.3s linear;
+}
+
+@keyframes rotate180 {
+    from {
+        transform: rotate(0deg);
+    }to {
+        transform: rotate(180deg);
+    }
 }

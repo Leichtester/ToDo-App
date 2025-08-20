@@ -5,12 +5,14 @@ import * as uuid from 'uuid';
 
 export interface taskObject {
   name: string;
+  content: string;
   status: boolean;
 }
 
 export interface fileObject {
   uuid: string;
   name: string;
+  content: string;
   status: boolean;
 }
 
@@ -20,10 +22,10 @@ export interface fileObject {
 export class Taskmanager {
   tasks = signal<Map<string, taskObject>>(new Map());
 
-  addTask(task: string) {
+  addTask(task: string, content: string) {
     const newUUID: string = uuid.v4();
     let dummy = this.tasks();
-    dummy.set(newUUID, {name: task, status: false});
+    dummy.set(newUUID, {name: task, content: content, status: false});
     this.tasks.set(dummy);
     this.saveData();
   }
@@ -53,7 +55,7 @@ export class Taskmanager {
   saveToFile() {
     const dummy: Map<string, taskObject> = this.tasks();
     dummy.forEach((value, key) => {
-      const JSONObj = {uuid: key, name: value.name, status: value.status};
+      const JSONObj = {uuid: key, name: value.name, content: value.content, status: value.status};
       const objString = JSON.stringify(JSONObj);
       console.log(objString);
       const blob = new Blob([objString], {type: 'application/json'});

@@ -43,13 +43,6 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 :root {
-  --primary: #8BB9E7;
-  --secondary: #3399FF;
-  --tertiary: #37474F;
-  --quartinary: #FAFAFA;
-}
-
-:root {
   @include mat.toolbar-overrides((
     container-background-color: var(--mat-sys-primary-container),
     container-text-color: var(--mat-sys-on-primary-container),

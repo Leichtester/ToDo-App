@@ -16,6 +16,7 @@ export class Task {
   isChecked: boolean = false;
 
   @Input() taskName!: string;
+  @Input() taskContent!: string;
   @Input() uuid!: string;
   @Input() isActive!: boolean;
 

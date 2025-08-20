@@ -3,10 +3,11 @@ import { Taskmanager } from '../services/taskmanager';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-task',
-  imports: [FormsModule, MatIconModule, MatCheckboxModule],
+  imports: [FormsModule, MatIconModule, MatCheckboxModule, MatCardModule],
   templateUrl: './task.html',
   styleUrl: './task.scss'
 })

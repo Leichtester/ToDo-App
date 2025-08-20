@@ -2,10 +2,14 @@
     <div class="form">
         <!-- <input type="text" placeholder="Enter name..." [(ngModel)]="name"> -->
         <mat-form-field class="example-full-width">
-            <mat-label>New task</mat-label>
-            <input matInput [(ngModel)]="name" #message placeholder="Take out the trash...">
+            <mat-label>Taskname</mat-label>
+            <input matInput [(ngModel)]="name" #message placeholder="Friday 13/05/25">
             <!--<mat-hint align="start"><strong>Don't disclose personal info</strong></mat-hint>
             <mat-hint align="end">{{message.value.length}} / 256</mat-hint>-->
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>New task</mat-label>
+            <textarea matInput [(ngModel)]="task" placeholder="Take out the trash..."></textarea>
         </mat-form-field>
         <button matButton="elevated" class="add-btn" (click)="add()">Add</button>
     </div>

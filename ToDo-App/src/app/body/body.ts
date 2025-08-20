@@ -16,6 +16,7 @@ export class Body implements OnInit {
 
   tasks: Map<string, taskObject> = new Map<string, taskObject>
   name: string = '';
+  task: string = '';
 
   constructor(private taskManager: Taskmanager) {
     effect(() => {

@@ -48,3 +48,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   --tertiary: #37474F;
   --quartinary: #FAFAFA;
 }
+
+:root {
+  @include mat.toolbar-overrides((
+    container-background-color: var(--mat-sys-primary-container),
+    container-text-color: var(--mat-sys-on-primary-container),
+  ));
+  @include mat.icon-button-overrides((
+    icon-color: var(--mat-sys-on-primary-container)
+  ));
+}

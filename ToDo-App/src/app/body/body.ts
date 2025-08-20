@@ -7,6 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
+import { Thememanager } from '../services/thememanager';
 
 @Component({
   selector: 'app-body',
@@ -22,7 +23,7 @@ export class Body implements OnInit {
 
   spin = false;
 
-  constructor(private taskManager: Taskmanager) {
+  constructor(private taskManager: Taskmanager, private thememanager: Thememanager) {
     effect(() => {
       this.tasks = taskManager.tasks();
     })
@@ -30,6 +31,7 @@ export class Body implements OnInit {
 
   ngOnInit(): void {
     this.taskManager.loadData();
+    this.thememanager.changeTheme('azure');
   }
 
   add() {

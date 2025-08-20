@@ -4,10 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-task',
-  imports: [FormsModule, MatIconModule, MatCheckboxModule, MatCardModule],
+  imports: [FormsModule, MatIconModule, MatCheckboxModule, MatCardModule, MatButtonModule],
   templateUrl: './task.html',
   styleUrl: './task.scss'
 })

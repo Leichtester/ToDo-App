@@ -6,10 +6,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatRadioModule } from '@angular/material/radio';
+import { Thememanager } from '../services/thememanager';
 
 @Component({
   selector: 'app-header',
-  imports: [MatToolbarModule, MatIconModule, MatButtonModule, MatExpansionModule, MatInputModule, FormsModule],
+  imports: [MatToolbarModule, MatIconModule, MatButtonModule, MatExpansionModule, MatInputModule, FormsModule, MatMenuModule, MatRadioModule],
   templateUrl: './header.html',
   styleUrl: './header.scss'
 })
@@ -18,7 +21,7 @@ export class Header {
   name: string = '';
   task: string = '';
 
-  constructor(private taskmanager: Taskmanager) {}
+  constructor(private taskmanager: Taskmanager, public thememanager: Thememanager) {}
 
   upload() {
     this.taskmanager.loadData();
@@ -33,10 +36,6 @@ export class Header {
     if(confirm) {
       this.taskmanager.clearAllTasks();
     }
-  }
-
-  menu() {
-
   }
   
   link() {

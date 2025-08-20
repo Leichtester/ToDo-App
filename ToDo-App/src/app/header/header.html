@@ -1,7 +1,16 @@
 <mat-toolbar color="primary">
-    <button matIconButton (click)="menu()"><mat-icon>check_circle_outline</mat-icon></button>
+    <button matIconButton><mat-icon>check_circle_outline</mat-icon></button>
     <span>ToDo-App</span>
     <span class="spacer"></span>
+    <button matIconButton [matMenuTriggerFor]="menu"><mat-icon>format_color_fill</mat-icon></button>
+    <mat-menu #menu="matMenu">
+        <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1" (click)="this.thememanager.changeTheme('azure')">Azure & Blue</mat-radio-button>
+            <mat-radio-button value="2" (click)="this.thememanager.changeTheme('rose')">Roses & Red</mat-radio-button>
+            <mat-radio-button value="3" (click)="this.thememanager.changeTheme('magenta')">Magenta & Violet</mat-radio-button>
+            <mat-radio-button value="4" (click)="this.thememanager.changeTheme('cyan')">Cyan & Orange</mat-radio-button>
+        </mat-radio-group>
+    </mat-menu>
     <button matIconButton (click)="link()"><mat-icon>link</mat-icon></button>
     <button matIconButton (click)="download()"><mat-icon>download</mat-icon></button>
     <button matIconButton (click)="clearAll()"><mat-icon>delete</mat-icon></button>

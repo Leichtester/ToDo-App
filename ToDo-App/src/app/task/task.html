@@ -5,6 +5,6 @@
     <mat-card-content>{{taskContent}}</mat-card-content>
     <mat-card-actions>
         <mat-checkbox [checked]="isActive" (change)="checkbox()"></mat-checkbox>
-        <button matButton="elevated" (click)="remove()"><mat-icon>close</mat-icon></button>
+        <button matIconButton (click)="remove()"><mat-icon>close</mat-icon></button>
     </mat-card-actions>
 </mat-card>

@@ -1,11 +1,11 @@
-import { Component, effect, OnInit } from '@angular/core';
+import { Component, effect, OnInit, ViewChild } from '@angular/core';
 import { Task } from './../task/task';
 import { Taskmanager, taskObject } from '../services/taskmanager';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
-import { MatExpansionModule } from '@angular/material/expansion';
+import { MatExpansionModule, MatExpansionPanel } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 import { Thememanager } from '../services/thememanager';
 
@@ -16,6 +16,7 @@ import { Thememanager } from '../services/thememanager';
   styleUrl: './body.scss'
 })
 export class Body implements OnInit {
+  @ViewChild('panel') panel!: any;
 
   tasks: Map<string, taskObject> = new Map<string, taskObject>
   name: string = '';
@@ -24,6 +25,8 @@ export class Body implements OnInit {
   spin = false;
 
   constructor(private taskManager: Taskmanager, private thememanager: Thememanager) {
+
+
     effect(() => {
       this.tasks = taskManager.tasks();
     })
@@ -38,6 +41,7 @@ export class Body implements OnInit {
     this.taskManager.addTask(this.name, this.task);
     this.name = '';
     this.task = '';
+    this.panel.close();
   }
 
   
@@ -51,4 +55,9 @@ export class Body implements OnInit {
     void this.spin;
     setTimeout(() => this.spin = true, 0)
   }
+
+  openPanel() {
+    this.panel.open();
+  }
+
 }

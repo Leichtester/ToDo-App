@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { Body } from '../body/body';
 
 @Component({
   selector: 'app-task',
@@ -23,7 +24,7 @@ export class Task {
 
   @Output() isActiveChanged = new EventEmitter<boolean>();
 
-  constructor(private taskmanager: Taskmanager) {}
+  constructor(private taskmanager: Taskmanager, private body: Body) {}
 
   remove() {
     this.taskmanager.removeTask(this.uuid)
@@ -31,5 +32,12 @@ export class Task {
 
   checkbox() {
     this.taskmanager.toggleStatus(this.uuid);
+  }
+
+  edit() {
+    this.body.name = this.taskName;
+    this.body.task = this.taskContent;
+    this.body.openPanel();
+    this.taskmanager.removeTask(this.uuid);
   }
 }

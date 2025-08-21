@@ -84,7 +84,6 @@ html, body { height: 100%; }
     icon-color: var(--mat-sys-on-primary-container),
   ));
   @include mat.checkbox-overrides((
-    //unselected-icon-color: var(--mat-sys-primary),
     unselected-icon-color: var(--mat-sys-on-primary-container),
   ));
 }

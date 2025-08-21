@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "publish": "ng build --output-path=dist --base-href=/ToDo-App/ && npx angular-cli-ghpages --dir=dist/browser"
+    "publish": "ng build --output-path=dist --base-href=/ && npx angular-cli-ghpages --dir=dist/browser"
   },
   "prettier": {
     "printWidth": 100,

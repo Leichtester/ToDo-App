@@ -1,7 +1,7 @@
 <div class="body">
     <div class="form">
         <mat-accordion>
-            <mat-expansion-panel hideToggle>
+            <mat-expansion-panel hideToggle #panel>
                 <mat-expansion-panel-header>
                     <mat-panel-title>Add a new task.</mat-panel-title>
                     <mat-icon class="space-correction" (click)="triggerSpin()" [class.spin-once]="spin" (animationend)="spin = false">add</mat-icon>
